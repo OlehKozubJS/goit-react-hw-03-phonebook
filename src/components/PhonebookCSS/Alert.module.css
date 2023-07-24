@@ -1,0 +1,45 @@
+.alert {
+  width: 100%;
+  border-radius: 25px 0 25px 0;
+  background-color: rgb(230, 250, 230);
+  border: 3px double rgb(190, 230, 190);
+  text-align: center;
+  font-family: 'Lugrasimo', cursive;
+  font-size: 25px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.alertText {
+  display: block;
+  overflow-wrap: break-word;
+  width: 300px;
+  color: rgb(130, 190, 130);
+}
+
+.alertButton {
+  border: 1px solid rgb(190, 230, 190);
+  background-color: rgb(230, 250, 230);
+  color: rgb(130, 190, 130);
+}
+
+.alertButton:hover,
+.alertButton:focus {
+  background-color: rgb(245, 255, 245);
+}
+
+.alertButton:not(:hover) {
+  background-color: rgb(230, 250, 230);
+}
+
+.alertButton:active {
+  border: 5px double rgb(245, 255, 245);
+  color: rgb(245, 255, 245);
+  background-color: rgb(130, 190, 130);
+}
+
+.hidden {
+  display: none;
+}
