@@ -7,6 +7,14 @@ import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 
 export class Phonebook extends Component {
+  /*
+  state = {
+    contacts: [],
+    filter: '',
+    isInContacts: false,
+    name: '',
+  };
+*/
   state = JSON.parse(localStorage.getItem('state')) || this.INITIAL_STATE;
 
   static INITIAL_STATE = {
@@ -17,8 +25,8 @@ export class Phonebook extends Component {
   };
 
   componentDidUpdate(prevState) {
-    if (this.state.todos) {
-      if (this.state.todos !== prevState.todos) {
+    if (this.state) {
+      if (this.state !== prevState) {
         localStorage.setItem('state', JSON.stringify(this.state));
       }
     }
