@@ -14,6 +14,13 @@ export class Phonebook extends Component {
     name: '',
   };
 
+  static INITIAL_STATE = {
+    contacts: [],
+    filter: '',
+    isInContacts: false,
+    name: '',
+  };
+
   componentDidUpdate(prevState) {
     if (this.state.todos) {
       if (this.state.todos !== prevState.todos) {
