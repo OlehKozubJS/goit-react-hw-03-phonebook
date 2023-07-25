@@ -14,7 +14,7 @@ export class Phonebook extends Component {
     name: '',
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevState) {
     if (this.state.todos) {
       if (this.state.todos !== prevState.todos) {
         localStorage.setItem('state', JSON.stringify(this.state));
