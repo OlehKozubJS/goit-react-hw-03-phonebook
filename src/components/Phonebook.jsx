@@ -14,7 +14,7 @@ const INITIAL_STATE = {
 };
 
 export class Phonebook extends Component {
-  state = JSON.parse(localStorage.getItem('state')) || INITIAL_STATE;
+  state = JSON.parse(localStorage.getItem('state')) || { ...INITIAL_STATE };
 
   componentDidUpdate(prevState) {
     if (this.state && this.state !== prevState) {
