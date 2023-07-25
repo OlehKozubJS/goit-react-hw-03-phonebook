@@ -6,23 +6,15 @@ import { Alert } from './Alert';
 import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 
-export class Phonebook extends Component {
-  /*
-  state = {
-    contacts: [],
-    filter: '',
-    isInContacts: false,
-    name: '',
-  };
-*/
-  state = JSON.parse(localStorage.getItem('state')) || this.INITIAL_STATE;
+const INITIAL_STATE = {
+  contacts: [],
+  filter: '',
+  isInContacts: false,
+  name: '',
+};
 
-  static INITIAL_STATE = {
-    contacts: [],
-    filter: '',
-    isInContacts: false,
-    name: '',
-  };
+export class Phonebook extends Component {
+  state = JSON.parse(localStorage.getItem('state')) || INITIAL_STATE;
 
   componentDidUpdate(prevState) {
     if (this.state) {
