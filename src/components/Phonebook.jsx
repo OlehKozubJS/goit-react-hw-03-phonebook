@@ -15,9 +15,9 @@ export class Phonebook extends Component {
   };
 
   componentDidMount() {
-    const parsedTodos = JSON.parse(localStorage.getItem('state'));
+    const parsedState = JSON.parse(localStorage.getItem('state'));
     if (parsedTodos) {
-      this.setState({ ...parsedTodos });
+      this.setState({ ...parsedState });
     }
   }
 
