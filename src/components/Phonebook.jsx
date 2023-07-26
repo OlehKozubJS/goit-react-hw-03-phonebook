@@ -15,7 +15,7 @@ export class Phonebook extends Component {
   };
 
   componentDidMount() {
-    this.setState(JSON.parse(localStorage.getItem('state')));
+    this.setState({ ...JSON.parse(localStorage.getItem('state')) });
   }
 
   componentDidUpdate(prevState) {
