@@ -14,7 +14,16 @@ const INITIAL_STATE = {
 };
 
 export class Phonebook extends Component {
-  state = JSON.parse(localStorage.getItem('state')) || { ...INITIAL_STATE };
+  state = {
+    contacts: [],
+    filter: '',
+    isInContacts: false,
+    name: '',
+  };
+
+  componentDidMount() {
+    this.setState({ ...JSON.parse(localStorage.getItem('state')) });
+  }
 
   componentDidUpdate(prevState) {
     if (this.state && this.state !== prevState) {
