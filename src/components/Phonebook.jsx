@@ -15,15 +15,15 @@ export class Phonebook extends Component {
   };
 
   componentDidMount() {
-    const parsedState = JSON.parse(localStorage.getItem('state'));
+    const parsedState = JSON.parse(localStorage.getItem('contacts'));
     if (parsedState) {
       this.setState({ ...parsedState });
     }
   }
 
-  componentDidUpdate(prevState) {
-    if (this.state && this.state !== prevState) {
-      localStorage.setItem('state', JSON.stringify(this.state));
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts && this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
 
